@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="portal">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content="Portal Colaborador Eletrosom" />
+<meta name="author" content="Paulo Junior" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" media="screen"
+	th:href="@{~/css/bootstrap.min.css}" />
+<link rel="stylesheet" media="screen" th:href="@{~/css/core.css}" />
+<!-- Custom styles for this template -->
+<link rel="stylesheet" th:href="@{~/css/business-frontpage.css}">
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script src="../../static/js/jquery.min.js"
+	th:src="@{~/js/jquery.min.js}"></script>
+<script src="../../static/js/bootstrap.min.js"
+	th:src="@{~/js/bootstrap.min.js}"></script>
+<script src="../../static/js/bootstrap.bundle.min.js"
+	th:href="@{~/js/bootstrap.bundle.min.js}"></script>
+
+<title>Sobre a Eletrosom</title>
+</head>
+<body>
+
+<!-- 	<div th:insert="~{fragments/header :: header}">&copy;</div> -->
+<section layout:fragment="content">
+	<header class="mt-3 py-3" style="height: 100px">
+		<div class="container h-50">
+			<div class="row h-50 align-items-center">
+				<div class="col-lg-12">
+					<h6 class="display-4 my-auto">Conheça a Eletrosom</h6>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="container my-2">
+
+		<div class="row">
+			<!-- 			<div class="col my-3"> -->
+			<div class="card border-info my-auto">
+				<div class="card-body">
+					<!-- 					<h5 class="card-title">Conheça a Eletrosom</h5> -->
+					<!-- 					<hr> -->
+					<p>A história iniciou-se pelo fundador Natal Acir na cidade de
+						Monte Carmelo, no interior de Minas Gerais, no ano de 1980. Hoje
+						considerada uma das 15 maiores Redes de Varejo do Brasil, oferece
+						mais de 4 (quatro) mil produtos para os seus clientes, por meio de
+						multicanais como lojas físicas, televendas e e-commerce (site).</p>
+					<p>Com mais de 35 anos de história, a Eletrosom se destaca com
+						uma das marcas mais sólidas e tradicionais do mercado. Presente
+						desde os grandes centros comerciais, até as pequenas cidades, a
+						Rede conta com mais de 150 lojas distribuídas em 6 (seis) Estados
+						brasileiros e no Distrito Federal, nas regiões Sudeste, Nordeste,
+						Centro-Oeste e Norte. Oferece um diversificado mix de produtos,
+						como: móveis, eletrodomêsticos, celulares, informática e muito
+						mais.</p>
+					<p>Além de serviços especiais, garantia estendida, seguros,
+						recargas para celulares, cursos online e empréstimos.</p>
+				</div>
+			</div>
+			<!-- 			</div> -->
+		</div>
+
+		<!-- /.row -->
+
+		<div class="row my-3">
+
+			<div class="card border-info my-auto">
+				<img class="card-img-top" th:src="@{/images/1.png}" />
+				<div class="card-body">
+					<h4 class="card-title">Missão</h4>
+					<hr>
+					<p>A Eletrosom tem como missão oferecer produtos e serviços de
+						qualidade, realizando os sonhos de seus clientes, gerando lucros e
+						responsabilidade social, além de contribuir para o desenvolvimento
+						do país.</p>
+				</div>
+			</div>
+
+		</div>
+		<div class="row my-3">
+
+			<div class="card border-info my-auto">
+				<img class="card-img-top" th:src="@{/images/2.png}" />
+				<div class="card-body">
+					<h4 class="card-title">Visão</h4>
+					<hr>
+					<p>A visão da empresa é ser considerada e reconhecida pelos
+						brasileiros como a melhor loja de varejo do país. Para isso
+						investimos continuamente no atendimento ao cliente no nosso time
+						de vendas, em um maior mix de produtos, oferecendo pontos de
+						vendas em localizações estratégicas, condições de pagamento e
+						preços competitivos.</p>
+				</div>
+			</div>
+
+		</div>
+		<div class="row my-3">
+
+			<div class="card border-info my-auto" style="width: 100%">
+				<img class="card-img-top" th:src="@{/images/3.png}" />
+				<div class="card-body">
+					<h4 class="card-title">Valores</h4>
+					<hr>
+					<p>
+						<i class="fa fa-arrow-circle-right" style="font-size: 18px"></i>
+						Cliente, é por você que a gente faz: nós sempre colocamos os
+						sonhos dos nossos clientes em primeiro lugar e fazemos o possível
+						para realizá-los.
+					</p>
+					<p>
+						<i class="fa fa-arrow-circle-right" style="font-size: 18px"></i>
+						Valorização do Ser Humano: investimentos no crescimento dos nossos
+						profissionais.
+					</p>
+					<p>
+						<i class="fa fa-arrow-circle-right" style="font-size: 18px"></i>
+						Respeito aos Investidores: agimos com seriedade e respeito aos
+						investidores que acreditam na nossa marca.
+					</p>
+					<p>
+						<i class="fa fa-arrow-circle-right" style="font-size: 18px"></i>
+						Ética: valorizamos a transparência,a honestidade e a dignidade em
+						todas as nossas relações com clientes, parceiros e profissionais.
+					</p>
+					<p>
+						<i class="fa fa-arrow-circle-right" style="font-size: 18px"></i>
+						Disciplina, Criatividade, Ousadia e Simplicidade.
+					</p>
+					<p>
+						<i class="fa fa-arrow-circle-right" style="font-size: 18px"></i>
+						Compromisso com o Brasil: nós assumimos o compromisso de respeito
+						às leis, visando sempre cooperar pelo bem-estar de toda a
+						sociedade.
+					</p>
+				</div>
+			</div>
+
+		</div>
+		<div class="row my-3">
+
+			<div class="card border-info my-auto ">
+				<img class="card-img-top" th:src="@{/images/4.png}" />
+				<div class="card-body">
+					<h4 class="card-title">Um Pouco de História</h4>
+					<hr>
+					<p>A Eletrosom não parou de de inovar, criando em 2010 sua loja
+						virtual: a Eletrosom.com.</p>
+					<p>A fundação ocorreu para trazer ainda mais conforto e
+						comodidade aos nossos clientes, que podem realizar suas compras em
+						qualquer hora e lugar.</p>
+					<p>E continuamos nos inovando para trazer a melhor experiência
+						de compra de nossos clientes. Hoje contamos com um mix
+						diversificado: móveis, eletrodomésticos, eletrônicos, telefonia,
+						relógios, entre outros, além do nosso Marketplace que reúne
+						grandes marcas.</p>
+					<p>Estamos também presentes em Redes Sociais, sempre trazendo
+						novidade e ofertas, e mantendo uma relação mais próxima com nossos
+						clientes.</p>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</section>
+
+	<!-- 	<div th:insert="~{fragments/footer :: footer}">&copy;</div> -->
+</body>
+</html>

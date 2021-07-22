@@ -1,0 +1,125 @@
+/*//////////////////////////////////////////////////////////////////
+[ FONT ]*/
+
+@font-face {
+    font-family: Poppins-Regular;
+    src: url('../fonts/poppins/Poppins-Regular.ttf'); 
+  }
+  
+  @font-face {
+    font-family: Poppins-Bold;
+    src: url('../fonts/poppins/Poppins-Bold.ttf'); 
+  }
+  
+  @font-face {
+    font-family: Poppins-Medium;
+    src: url('../fonts/poppins/Poppins-Medium.ttf'); 
+  }
+  
+  @font-face {
+    font-family: Montserrat-Bold;
+    src: url('../fonts/montserrat/Montserrat-Bold.ttf'); 
+  }
+
+  @font-face {
+    font-family: fontawesome-webfont;
+    src: url('../fonts/fontawesome-webfont.woff'); 
+  }
+
+body {
+    font-family: "Poppins-Regular";
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+a {
+	font-family: Poppins-Regular;
+	font-size: 14px;
+	line-height: 1.7;
+	color: #666666;
+	margin: 0px;
+	transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+}
+
+a:focus {
+	outline: none !important;
+}
+
+a:hover {
+	text-decoration: none;
+  color: #EBCD01;
+}
+
+.header {
+    margin-bottom: 40px;
+}
+
+.card-custom-main {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    border-radius: 20px;
+    border-width: 2px;
+    box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+}
+
+.card-custom {
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.welcome1 {
+    font-size: 20px;
+    color: #363636;
+    letter-spacing: 3px;
+}
+
+.welcome2 {
+    font-family: Poppins-Medium;
+    font-size: 40px;
+    font-weight: bold;
+    color: #363636;
+    margin-top: -10px;
+    letter-spacing: 3px;
+
+}
+
+.line1 {
+    width: 70px;
+    border-bottom: 3px solid #EBCD01;
+    margin-top: -5px;
+}
+
+.img-custom {
+    border-radius: 20px;
+    transition:all 0.3s ease;
+}
+
+.img-custom:hover {
+	-webkit-transform: scale(1.1);
+     -ms-transform: scale(1.1);
+     transform: scale(1.1);
+}
+
+.footer {
+    background-color: #080090;
+}
+
+.txt1 {
+    font-family: Poppins-Regular;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #999999;
+}
+  
+.txt2 {
+  font-family: Poppins-Regular;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #999999;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Bem Vindo</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="../static/images/favicon.ico" th:href="@{~/images/favicon.ico}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/vendor/bootstrap/css/bootstrap.min.css" th:href="@{~/vendor/bootstrap/css/bootstrap.min.css}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/css/about.css" th:href="@{~/css/about.css}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/css/util.css" th:href="@{~/css/util.css}">
+
+</head>
+<body>
+	
+	<div class="container">
+
+		<section class="container card-custom">
+
+			<header class="py-3 header" style="height: 120px; width: 100%">
+				<div class="container h-75">
+					<div class="row h-75 align-items-center">
+						<div class="col-lg-12">
+							<h6 class="welcome1">
+								Bem vindo ao
+							</h6>
+							<h6 class="welcome2">
+								Portal do Colaborador
+							</h6>
+							<div class="line1"></div>
+
+							<p class="mb-2 mt-4" style="color: #363636">
+								Aqui você encontra informações sobre a empresa, sobre seu cadastro
+								além de diversas informações úteis.
+							</p>
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<div class="parallax mainSection bg-img-section img-fluid"></div>
+
+			<div class="row">
+				<div class="col-md-8 mb-5 ml-2">
+					<!--<h2>Faça seu Login</h2>-->
+					<hr>
+					<p>
+						Aqui você tem acesso ao seu cadastro, demonstrativo de
+						pagamentos, informe de rendimentos, folha de ponto, além de várias
+						solicitações disponíveis.
+					</p>
+					<a type="button" class="custom_btn" th:href="@{/layout}">Acessar</a>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6 mb-5">
+					<div class="card h-100" style="border: none;">
+						<div class="card-body">
+							<h4 class="card-title">Conheça a Eletrosom</h4>
+							<div class="line1 mb-3"></div>
+							<p class="card-text">
+								A história iniciou-se pelo fundador
+								Natal Acir na cidade de Monte Carmelo, no interior de Minas
+								Gerais, no ano de 1980. Hoje considerada uma das 15 maiores
+								Redes de Varejo do Brasil, oferece mais de 4 (quatro) mil
+								produtos para os seus clientes, por meio de multicanais como
+								lojas físicas, televendas e e-commerce (site).
+							</p>
+						</div>
+						<div class="card-footer">
+							<a class="custom_btn" th:href="@{/empresa/sobre}">Conheça mais!</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-6 mb-5">
+					<div class="card h-100" style="border: none;">
+						<div class="card-body">
+							<h4 class="card-title">Informações Úteis</h4>
+							<div class="line1 mb-3"></div>
+							<p class="card-text">
+								Faça aqui o download dos arquivos como
+								Politica de viagens, Código de conduta, Manual de pádronização e
+								outros.
+							</p>
+						</div>
+						<div class="card-footer">
+							<a class="custom_btn" th:href="@{/empresa/info}">Se informe!</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+	</div>
+
+	<div class="footer">
+		<div class="text-center p-t-8 p-b-8">
+			<span class="txt1">
+				Copyright ©
+			</span>
+			<a class="txt2" href="https://www.eletrosom.com" target="_blank">
+				ELETROSOM S/A
+			</a>
+		</div>
+	</div>
+			
+</body>
+</html>

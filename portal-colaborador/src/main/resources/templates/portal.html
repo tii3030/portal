@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content="Portal Colaborador Eletrosom" />
+<meta name="author" content="Paulo Junior" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>Portal do Colaborador</title>
+
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+<!-- Custom styles for this template -->
+<link rel="stylesheet" th:href="@{/css/simple-sidebar.css}">
+<link th:href="@{/css/home.css}" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<div class="d-flex" id="wrapper">
+
+		<nav class="navbar navbar-expand-sm navbar-light  fixed-top"
+			style="background-color: #080090; color: white;">
+
+			<div class="container">
+				<img th:src="@{~/images/img_marca.png}"
+					style="height: 10%; width: 10%;" class="rounded float-left">
+				<a class="navbar-brand font-weight-bold float-center ml-3 mr-auto" th:href="@{/index}"
+					style="color: white; font-size: 25px" th:align="center">Portal
+					do Colaborador</a>
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarResponsive" aria-controls="navbarResponsive"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+<!--				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active"><a class="nav-link"
+							style="color: white" th:href="@{/}">Página Inicial<span
+								class="sr-only">(current)</span>
+						</a></li>
+						<li class="nav-item"><a class="nav-link font-weight-bold"
+							style="color: white" th:href="@{/login}">Login</a></li>
+					</ul>
+				</div>-->
+			</div>
+		</nav>
+
+
+		<div class="container-fluid " id="content">
+			<section layout:fragment="content">
+				<p>Your page content goes here</p>
+			</section>
+			<p></p>
+		</div>
+	</div>
+
+	<div th:insert="~{fragments/footer :: footer}">&copy;</div>
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="/jquery/jquery.min.js" th:src="@{/jquery/jquery.min.js}"></script>
+	<script src="/js/bootstrap.bundle.min.js"
+		th:src="@{/js/bootstrap.bundle.min.js}"></script>
+
+	<!-- Menu Toggle Script -->
+	<script>
+		$("#menu-toggle").click(function(e) {
+			e.preventDefault();
+			$("#wrapper").toggleClass("toggled");
+		});
+	</script>
+
+</body>
+
+</html>

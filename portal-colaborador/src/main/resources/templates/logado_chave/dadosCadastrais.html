@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+	layout:decorator="~{layout}">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link href="../../static/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../static/css/bootstrap.css" rel="stylesheet">
+<link href="../../static/css/home.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+	<section layout:fragment="content">
+
+		<div class="container my-3">
+
+			<div class="dadosCadastraisList my-3 py-3">
+				<!-- 				<button type="button" class="btn btn-primary" data-toggle="modal" -->
+				<!-- 					data-target="#exampleModal">Launch demo modal</button> -->
+
+				<!-- Modal -->
+
+
+				<form action="#" th:action="@{/logado_chave/dadosCadastrais}"
+					method="post">
+					<div class="container my-3 mx-2">
+						<h2 class="my-3">Minhas Informações</h2>
+						<table class="table table-sm table-borderless my-3">
+							<thead class="thead"
+								style="color: white; background-color: #072B72;">
+								<tr>
+									<th class="align-content-center" scope="col"
+										th:text="${dadosCadastrais.codigo}"></th>
+									<th class="align-content-center" scope="col" colspan="4"
+										th:text="${dadosCadastrais.nmusu}"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td colspan="2"><p class="font-weight-bold">Empresa:</p> <input
+										type="text" readonly class="form-control-plaintext"
+										id="empresa"
+										th:value="|${dadosCadastrais.empre} - ${dadosCadastrais.rzsoc}|"></td>
+									<td><p class="font-weight-bold">CNPJ:</p> <input
+										type="text" readonly class="form-control-plaintext" id="cnpj"
+										th:value="${dadosCadastrais.cnpj}"></td>
+									<td><p class="font-weight-bold">Departamento:</p> <input
+										type="text" readonly class="form-control-plaintext"
+										th:value="|${dadosCadastrais.cod_dep}-${dadosCadastrais.des_dep}|">
+									</td>
+									<td><p class="font-weight-bold">Cargo:</p> <input
+										type="text" readonly class="form-control-plaintext"
+										th:value="${dadosCadastrais.car_fun}"></td>
+								</tr>
+								<tr>
+									<td><p class="font-weight-bold">Cadastro:</p> <input
+										type="text" readonly class="form-control-plaintext"
+										th:value="${dadosCadastrais.codigo}"></td>
+									<td colspan="2"><p class="font-weight-bold">Funcionário:</p>
+										<input type="text" readonly class="form-control-plaintext"
+										th:value="${dadosCadastrais.nmusu}"></td>
+									<td><p class="font-weight-bold">Admissão:</p> <input
+										type="text" readonly class="form-control-plaintext"
+										th:value="${dadosCadastrais.admis}"></td>
+									<td><p class="font-weight-bold">Sexo:</p> <input
+										type="text" readonly class="form-control-plaintext"
+										th:value="${dadosCadastrais.sexo}"></td>
+								</tr>
+								<tr>
+									<td colspan="2"><p class="font-weight-bold">Grau
+											Instrução:</p> <input type="text" readonly
+										class="form-control-plaintext"
+										th:value="|${dadosCadastrais.cod_grau} - ${dadosCadastrais.desc_grau}|"></td>
+									<td><p class="font-weight-bold">Data Nascimento:</p> <input
+										type="text" readonly class="form-control-plaintext"
+										th:value="${dadosCadastrais.dat_nas}"></td>
+									<td colspan="2"><p class="font-weight-bold">Nacionalidade:</p>
+										<input type="text" readonly class="form-control-plaintext"
+										th:value="|${dadosCadastrais.cod_nac}-${dadosCadastrais.des_nac}|"></td>
+								</tr>
+								<tr>
+									<td colspan="2"><p class="font-weight-bold">Mãe:</p> <input
+										type="text" readonly class="form-control-plaintext"
+										th:value="${dadosCadastrais.nmmae}"></td>
+									<td></td>
+									<td colspan="2"><p class="font-weight-bold">Pai:</p> <input
+										type="text" readonly class="form-control-plaintext"
+										th:value="${dadosCadastrais.nmpai}"></td>
+								</tr>
+								<tr>
+									<td><p class="font-weight-bold">Dependente
+											Relacionamento:</p> <input type="text" readonly
+										class="form-control-plaintext"
+										th:value="${dadosCadastrais.dep_relac}"></td>
+									<td colspan="2"><p class="font-weight-bold">Dependente
+											nome:</p> <input type="text" readonly
+										class="form-control-plaintext"
+										th:value="${dadosCadastrais.dep_nome}"></td>
+									<td colspan="2"></td>
+								</tr>
+								<tr>
+									<td colspan="2"><p class="font-weight-bold">Endereço:</p>
+										<input type="text" class="form-control-plaintext"
+										th:value="${dadosCadastrais.end_fun}" readonly></td>
+									<td><p class="font-weight-bold">Número:</p> <input
+										type="text" class="form-control-plaintext"
+										th:value="${dadosCadastrais.numer}" readonly></td>
+									<td>
+										<p class="font-weight-bold">Complemento:</p> <input
+										type="text" class="form-control-plaintext"
+										th:value="${dadosCadastrais.complem}" readonly>
+									</td>
+									<td><p class="font-weight-bold">Bairro:</p> <input
+										type="text" class="form-control-plaintext"
+										th:value="${dadosCadastrais.bai_fun}" readonly></td>
+
+								</tr>
+								<tr>
+									<td><p class="font-weight-bold">Cidade/UF:</p> <input
+										type="text" readonly class="form-control-plaintext"
+										th:value="|${dadosCadastrais.cid_fun}-${dadosCadastrais.est_fun}|"></td>
+									<td><p class="font-weight-bold">CPF:</p> <input
+										type="text" readonly class="form-control-plaintext"
+										th:value="${dadosCadastrais.cpf_fun}"></td>
+									<td><p class="font-weight-bold">Data de emissão:</p> <input
+										type="text" readonly class="form-control-plaintext"
+										th:value="${dadosCadastrais.dtcpf}"></td>
+
+								</tr>
+								<tr>
+									<td><p class="font-weight-bold">RG:</p> <input type="text"
+										readonly class="form-control-plaintext"
+										th:value="${dadosCadastrais.rgnum}"></td>
+									<td><p class="font-weight-bold">Orgão Expeditor:</p> <input
+										type="text" readonly class="form-control-plaintext"
+										th:value="${dadosCadastrais.rgorg}"></td>
+									<td><p class="font-weight-bold">Data de expedição:</p> <input
+										type="text" readonly class="form-control-plaintext"
+										th:value="${dadosCadastrais.rgdt}"></td>
+									<td colspan="2"></td>
+								</tr>
+								<tr>
+									<td><p class="font-weight-bold">Titulo Eleitor:</p> <input
+										type="text" readonly class="form-control-plaintext"
+										th:value="${dadosCadastrais.tit_elei}"></td>
+									<td><p class="font-weight-bold">Zona:</p> <input
+										type="text" readonly class="form-control-plaintext"
+										th:value="${dadosCadastrais.zona_elei}"></td>
+									<td><p class="font-weight-bold">Seção:</p> <input
+										type="text" readonly class="form-control-plaintext"
+										th:value="${dadosCadastrais.secao_elei}"></td>
+									<td><p class="font-weight-bold">Municipio:</p> <input
+										type="text" readonly class="form-control-plaintext"
+										th:value="${dadosCadastrais.munic_elei}"></td>
+									<td><p class="font-weight-bold">Data Emissão:</p> <input
+										type="text" readonly class="form-control-plaintext"
+										th:value="${dadosCadastrais.emis_elei}"></td>
+								</tr>
+								<tr>
+									<td><p class="font-weight-bold">Carteira de Trabalho:</p>
+										<input type="text" readonly class="form-control-plaintext"
+										th:value="${dadosCadastrais.cart_trab}"></td>
+									<td><p class="font-weight-bold">Série:</p> <input
+										type="text" readonly class="form-control-plaintext"
+										th:value="${dadosCadastrais.ser_trab}"></td>
+									<td><p class="font-weight-bold">UF:</p> <input type="text"
+										readonly class="form-control-plaintext"
+										th:value="${dadosCadastrais.uf_trab}"></td>
+									<td><p class="font-weight-bold">Data Emissão:</p> <input
+										type="text" readonly class="form-control-plaintext"
+										th:value="${dadosCadastrais.dt_trab}"></td>
+									<td><p class="font-weight-bold">PIS:</p> <input
+										type="text" readonly class="form-control-plaintext"
+										th:value="${dadosCadastrais.pis}"></td>
+								</tr>
+								<tr>
+									<td><p class="font-weight-bold">Telefone 1:</p> <input
+										type="text" class="form-control-plaintext"
+										th:value="${dadosCadastrais.tel_fun}" readonly></td>
+									<td><p class="font-weight-bold">Telefone 2:</p> <input
+										type="text" class="form-control-plaintext"
+										th:value="${dadosCadastrais.tel_fun2}" readonly></td>
+									<td><p class="font-weight-bold">Email:</p> <input
+										type="text" class="form-control-plaintext"
+										th:value="${dadosCadastrais.email}" readonly></td>
+
+								</tr>
+							</tbody>
+						</table>
+						<div class="container mt-4">
+							<a href="atualiza_cadastro" type="button"
+								class="btn  btn-lg btn-block" role="button" aria-pressed="true"
+								style="color: white; background-color: #072B72;">Atualize
+								seus dados de contato</a>
+
+						</div>
+
+						<!-- 						<div class="modal fade" id="exampleModal" tabindex="-1" -->
+						<!-- 							aria-labelledby="exampleModalLabel" aria-hidden="true"> -->
+						<!-- 							<div class="modal-dialog"> -->
+						<!-- 								<div class="modal-content"> -->
+						<!-- 									<div class="modal-header"> -->
+						<!-- 										<h5 class="modal-title" id="exampleModalLabel">Faça a -->
+						<!-- 											atualização dos seus dados</h5> -->
+						<!-- 										<br> <br> -->
+						<!-- 										<p>Deixe em branco os dados que não devem ser atualizados</p> -->
+						<!-- 										<button type="button" class="close" data-dismiss="modal" -->
+						<!-- 											aria-label="Close"> -->
+						<!-- 											<span aria-hidden="true">&times;</span> -->
+						<!-- 										</button> -->
+						<!-- 									</div> -->
+						<!-- 									<div class="modal-body"> -->
+
+						<!-- 										<div class="form-group"> -->
+						<!-- 											<p class="font-weight-bold">CEP:</p> -->
+						<!-- 											<input type="text" class="form-control-plaintext" -->
+						<!-- 												th:value="${dadosCadastrais.}" name="cepCodigo" maxlength="8"> -->
+						<!-- 										</div> -->
+
+						<!-- 										<div class="form-group"> -->
+						<!-- 											<p class="font-weight-bold">Tipo Logradouro:</p> -->
+						<!-- 											<select name="tipLog" class="form-control" id="tipLog"> -->
+						<!-- 												<option th:value="AV" selected>AV</option> -->
+						<!-- 												<option th:each="item : ${tipLogr}" th:value="${item}" -->
+						<!-- 													th:text="${item}"></option> -->
+						<!-- 											</select> -->
+						<!-- 										</div> -->
+						<!-- 										<div class="form-group"> -->
+						<!-- 											<p class="font-weight-bold">Endereço:</p> -->
+						<!-- 											<input type="text" class="form-control-plaintext" -->
+						<!-- 												th:value="${dadosCadastrais.end_fun}" name="endereco"> -->
+						<!-- 											<p class="font-weight-bold">Número:</p> -->
+						<!-- 											<input type="text" class="form-control-plaintext" -->
+						<!-- 												th:value="${dadosCadastrais.numer}" name="numero"> -->
+						<!-- 										</div> -->
+						<!-- 										<div class="form-group"> -->
+						<!-- 											<p class="font-weight-bold">Complemento:</p> -->
+						<!-- 											<input type="text" class="form-control-plaintext" -->
+						<!-- 												th:value="${dadosCadastrais.complem}" name="complemento"> -->
+						<!-- 											<p class="font-weight-bold">Bairro:</p> -->
+						<!-- 											<input type="text" class="form-control-plaintext" -->
+						<!-- 												th:value="${dadosCadastrais.bai_fun}" name="bairro"> -->
+						<!-- 										</div> -->
+						<!-- 										<div class="form-group"> -->
+						<!-- 											<p class="font-weight-bold">DDD Telefone 1:</p> -->
+						<!-- 											<input type="text" class="form-control-plaintext" -->
+						<!-- 												name="dddtel1"> -->
+						<!-- 											<p class="font-weight-bold">Telefone 1:</p> -->
+						<!-- 											<input type="text" class="form-control-plaintext" -->
+						<!-- 												th:value="${dadosCadastrais.tel_fun}" name="tel1"> -->
+						<!-- 										</div> -->
+						<!-- 										<div class="form-group"> -->
+						<!-- 											<p class="font-weight-bold">DDD Telefone 2:</p> -->
+						<!-- 											<input type="text" class="form-control-plaintext" -->
+						<!-- 												name="dddtel2"> -->
+						<!-- 											<p class="font-weight-bold">Telefone 2:</p> -->
+						<!-- 											<input type="text" class="form-control-plaintext" -->
+						<!-- 												th:value="${dadosCadastrais.tel_fun2}" name="tel2"> -->
+						<!-- 										</div> -->
+						<!-- 										<div class="form-group"> -->
+						<!-- 											<p class="font-weight-bold">Email:</p> -->
+						<!-- 											<input type="email" class="form-control-plaintext" -->
+						<!-- 												th:value="${dadosCadastrais.email}" name="email"> -->
+						<!-- 										</div> -->
+
+						<!-- 									</div> -->
+						<!-- 									<div class="modal-footer"> -->
+						<!-- 										<button type="button" class="btn btn-secondary" -->
+						<!-- 											data-dismiss="modal">Cancelar</button> -->
+						<!-- 										<button type="submit" class="btn btn-primary" -->
+						<!-- 											style="background-color: #080090; color: white;">Salvar -->
+						<!-- 											alterações</button> -->
+						<!-- 									</div> -->
+						<!-- 								</div> -->
+						<!-- 							</div> -->
+						<!-- 						</div> -->
+
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</section>
+
+</body>
+
+<script src="../../static/jquery/jquery.min.js" type="text/javascript"></script>
+
+<script src="../../static/js/bootstrap.min.js"></script>
+<script src="../../static/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- <script language="javascript"> -->
+
+<!-- </script> -->
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+	layout:decorator="~{/layout.html}">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link href="../../static/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../static/css/bootstrap.css" rel="stylesheet">
+<link href="../../static/css/home.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+	<section layout:fragment="table_content">
+
+		<div class="container">
+
+			<div class="container my-4 mx-auto"
+				id="solicitacoes_wrapper">
+
+				<div class="solicitacoeslist"
+					th:unless="${#lists.isEmpty(listaSolicitacoes)}">
+
+					<h2>Solicitações Pendentes</h2>
+
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th scope="col">
+									<table>
+										<tbody>
+											<tr>
+												<td>Selecionar</td>
+											</tr>
+											<tr>
+												<td>1 2
+													<button type="button" class="btn btn-default"
+														onclick="checkAll()">Selecionar todos</button>
+													<button type="button" class="btn btn-default"
+														onclick="unCheckAll()">Limpar</button>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</th>
+								<th scope="col">Data Solicitação</th>
+								<th scope="col">Funcionário</th>
+								<th scope="col">Quantidade</th>
+								<th scope="col">Prazo de Entrega</th>
+
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="item : ${listaSolicitacoes}">
+								<td><input type="checkbox" name="enviar"></td>
+								<td th:text="${item.dataSolicitacao}"></td>
+								<td th:text="|${item.usuario.codigo} - ${item.usuario.nome}|"></td>
+								<td th:text="${item.quantidade}"></td>
+								<td th:text="${item.dataPrevisao}"></td>
+
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</body>
+
+<script src="../../static/jquery/jquery.min.js" type="text/javascript"></script>
+
+<script src="../../static/js/bootstrap.min.js"></script>
+<script src="../../static/js/bootstrap.bundle.min.js"></script>
+
+<script type="text/javascript">
+	// Select all check boxes : Setting the checked property to true in checkAll() function
+	function checkAll() {
+		var items = document.getElementsByName('enviar');
+		for (var i = 0; i < items.length; i++) {
+			if (items[i].type == 'checkbox')
+				items[i].checked = true;
+		}
+	}
+	// Clear all check boxes : Setting the checked property to false in uncheckAll() function
+	function unCheckAll() {
+		var items = document.getElementsByName('enviar');
+		for (var i = 0; i < items.length; i++) {
+			if (items[i].type == 'checkbox')
+				items[i].checked = false;
+		}
+	}
+</script>
+<!-- <script language="javascript"> -->
+
+<!-- </script> -->
+
+</html>

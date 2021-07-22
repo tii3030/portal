@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content="Portal Colaborador Eletrosom" />
+<meta name="author" content="Paulo Junior" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>Portal do Colaborador</title>
+
+<!-- Bootstrap core CSS -->
+<link href="/css/bootstrap.min.css" rel="stylesheet"
+	th:href="@{/css/bootstrap.min.css}">
+<link href="/css/bootstrap.css" rel="stylesheet"
+	th:href="@{/css/bootstrap.css}">
+<!-- Custom styles for this template -->
+<link href="/css/simple-sidebar.css" rel="stylesheet"
+	th:href="@{/css/simple-sidebar.css}">
+<link th:href="@{/css/home.css}" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<div class="d-flex" id="wrapper">
+
+		<!-- Sidebar -->
+		<div class="border-right"
+			style="color: white; background-color: #072B72;" id="sidebar-wrapper">
+			<div class="sidebar-heading" id="idop">Opções</div>
+			<div class="list-group list-group-flush font-weight-bold bg-warning">
+				<a th:href="@{/logado_chave/chave_cadastrais}"
+					class="list-group-item list-group-item-action bg-warning">Minhas
+					Informações</a> <a th:href="@{/logado_chave/chave_documentos}"
+					class="list-group-item list-group-item-action bg-warning">Solicitar
+					Documentos</a>
+				<!-- 				<div class="list-group"> -->
+				<!-- 					<a href="#" class="list-group-item">Demonstrativo de pagamentos</a> -->
+				<!-- 					<a href="#" class="list-group-item">Cartão de Ponto</a> <a href="#" -->
+				<!-- 						class="list-group-item">Informe de Rendimentos</a> -->
+				<!-- 				</div> -->
+				<a th:href="@{/logado_chave/chave_ferias}"
+					class="list-group-item list-group-item-action bg-warning">Férias</a>
+				<a th:href="@{/logado_usuario/solicita_diversas}"
+					class="list-group-item list-group-item-action bg-warning">Solicitações
+					Diversas</a> <a th:href="@{/logado_rh/opcoes_rh}"
+					class="list-group-item list-group-item-action bg-warning">Acesso
+					RH</a> <a th:href="@{/logado_gestor/opcoes_gestor}"
+					class="list-group-item list-group-item-action bg-warning">Acesso
+					Gestor</a>
+			</div>
+		</div>
+		<!-- /#sidebar-wrapper -->
+
+		<!-- Page Content -->
+		<div id="page-content-wrapper">
+
+			<nav class="navbar navbar-expand-lg navbar-light bg-warning border-bottom">
+
+				<button class="btn mr-2"
+					style="background-color: #072B72; color: white; height: 100%;"
+					id="menu-toggle">Menu</button>
+				<img th:src="@{~/images/img_marca.png}" style="height: 10%; width: 10%;" class="rounded float-left">
+
+				<a class="navbar-brand font-weight-bold ml-2" th:href="@{/home}"
+					style="color: #072B72; font-size: 25px">Portal do Colaborador</a>
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+						<li class="nav-item active"><a class="nav-link"
+							th:href="@{/home}">Home <span class="sr-only">(current)</span>
+						</a></li>
+						<li class="nav-item"><a class="nav-link"
+							th:href="@{/usuario/seguranca}">Segurança</a></li>
+						<li class="nav-item"><a class="nav-link" th:href="@{/logout}">Sair</a></li>
+						<!-- 						<li class="nav-item dropdown"><a -->
+						<!-- 							class="nav-link dropdown-toggle" href="#" id="navbarDropdown" -->
+						<!-- 							role="button" data-toggle="dropdown" aria-haspopup="true" -->
+						<!-- 							aria-expanded="false"> Dropdown </a> -->
+						<!-- 							<div class="dropdown-menu dropdown-menu-right" -->
+						<!-- 								aria-labelledby="navbarDropdown"> -->
+						<!-- 								<a class="dropdown-item" href="#">Action</a> <a -->
+						<!-- 									class="dropdown-item" href="#">Another action</a> -->
+						<!-- 								<div class="dropdown-divider"></div> -->
+						<!-- 								<a class="dropdown-item" href="#">Something else here</a> -->
+						<!-- 							</div></li> -->
+					</ul>
+				</div>
+			</nav>
+
+			<header>
+				<div class="container-fluid" id="header_wp">
+					<!-- 					<span sec:authentication="principal.username">Username</span> <span -->
+					<!-- 											<span sec:authentication="principal.authorities">roles</span> -->
+					<div class="container border-bottom"
+						th:unless="${usuarioView == null}">
+						<table class="table table-sm table-borderless">
+							<tbody>
+								<tr>
+									<td><p class="font-weight-bold">Colaborador:</p> <span
+										th:text="${usuarioView.identificacao}"></span></td>
+									<td><p class="font-weight-bold">Filial:</p> <span
+										th:text="${usuarioView.filial}"></span></td>
+								</tr>
+								<tr>
+									<td><p class="font-weight-bold">Cargo:</p> <span
+										th:text="${usuarioView.cargo}"></span></td>
+									<td><p class="font-weight-bold">Admissão:</p> <span
+										th:text="${usuarioView.admissao}"></span></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+				</div>
+			</header>
+			<div class="container-fluid" id="content_wp">
+				<!-- 			<span sec:authentication="principal.username">Username</span> -->
+				<!-- 			<span sec:authentication="principal.nome">Nome</span> -->
+				<section layout:fragment="content">
+					<p>Your page content goes here</p>
+				</section>
+				<!-- 				<div th:replace="logado_usuario/cracha.html :: contentSol"> -->
+				<!-- 				<div layout:fragment="content"> -->
+				<!-- 					<h1 class="mt-4">Bem vindo,</h1> -->
+				<!-- 				</div> -->
+				<p></p>
+			</div>
+		</div>
+		<!-- /#page-content-wrapper -->
+
+	</div>
+	<!-- /#wrapper -->
+
+	<div th:insert="~{fragments/footer :: footer}">&copy;</div>
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="/jquery/jquery.min.js" th:src="@{/jquery/jquery.min.js}"></script>
+	<script src="/js/bootstrap.bundle.min.js"
+		th:src="@{/js/bootstrap.bundle.min.js}"></script>
+
+	<!-- Menu Toggle Script -->
+	<script>
+		$("#menu-toggle").click(function(e) {
+			e.preventDefault();
+			$("#wrapper").toggleClass("toggled");
+		});
+	</script>
+
+</body>
+
+</html>
